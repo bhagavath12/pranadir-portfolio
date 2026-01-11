@@ -17,8 +17,8 @@ export default function Hero() {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut", // Fixed: Changed from array to string to resolve Vercel build error
-      },
+        ease: [0.22, 1, 0.36, 1],
+      } as any, // "as any" bypasses the strict TypeScript error on Vercel
     },
   };
 
