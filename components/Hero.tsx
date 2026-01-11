@@ -17,7 +17,7 @@ export default function Hero() {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: [0.22, 1, 0.36, 1],
+        ease: "easeOut", // Fixed: Changed from array to string to resolve Vercel build error
       },
     },
   };
@@ -45,7 +45,6 @@ export default function Hero() {
               </motion.h1>
             </div>
 
-            {/* New Headline Line 1 */}
             <div className="overflow-hidden -mt-2 pb-2">
               <motion.h1 
                 variants={itemVariants} 
@@ -55,7 +54,6 @@ export default function Hero() {
               </motion.h1>
             </div>
 
-            {/* New Headline Line 2 */}
             <div className="overflow-hidden -mt-2 pb-4">
               <motion.h1 
                 variants={itemVariants} 
@@ -65,7 +63,6 @@ export default function Hero() {
               </motion.h1>
             </div>
 
-            {/* New Headline Line 3 */}
             <div className="overflow-hidden -mt-6 pb-4">
               <motion.h1 
                 variants={itemVariants} 
@@ -75,8 +72,7 @@ export default function Hero() {
               </motion.h1>
             </div>
 
-            {/* New Subtext */}
-            <div className="overflow-hidden pt-6 pl-2">
+            <div className="overflow-hidden pt-6">
               <motion.p variants={itemVariants} className="text-xl text-slate-600 max-w-2xl leading-relaxed">
                 From lead response and onboarding to RAG agents and voice workflows — I audit existing processes and build automations using n8n and modern AI stacks.
               </motion.p>
