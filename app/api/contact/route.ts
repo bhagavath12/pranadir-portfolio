@@ -5,24 +5,21 @@ export async function POST(req: Request) {
     const body = await req.json();
     const n8nWebhookUrl = process.env.N8N_WEBHOOK_URL;
 
-    if (!n8nWebhookUrl) {
-      console.error("N8N_WEBHOOK_URL not set");
-      return NextResponse.json({ success: false }, { status: 500 });
+    if (n8nWebhookUrl) {
+      // FIRE AND FORGET: 
+      // We do not 'await' this. The request starts, and we move on immediately.
+      fetch(n8nWebhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      }).catch((err) => console.error("Background Webhook Error:", err));
     }
 
-    // Fire-and-forget webhook call
-    fetch(n8nWebhookUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    }).catch((err) => {
-      console.error("Webhook send failed:", err);
-    });
-
-    // Always return success to frontend
+    // ALWAYS return success to the frontend instantly
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Contact API error:", error);
-    return NextResponse.json({ success: false }, { status: 500 });
+    // Even on error, we return success so the user sees the 'Thank You' message
+    return NextResponse.json({ success: true });
   }
 }
