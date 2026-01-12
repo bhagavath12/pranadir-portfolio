@@ -74,7 +74,7 @@ export default function Hero() {
 
             <div className="overflow-hidden pt-6">
               <motion.p variants={itemVariants} className="text-xl text-slate-600 max-w-2xl leading-relaxed">
-                From lead response and onboarding to RAG agents and voice workflows — I audit existing processes and build automations using n8n and modern AI stacks.
+                From lead response and onboarding to RAG agents and voice workflows - I audit existing processes and build automations using n8n and modern AI stacks.
               </motion.p>
             </div>
             

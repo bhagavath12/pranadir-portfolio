@@ -37,7 +37,7 @@ export default function ProblemSection() {
         <ScrollReveal width="100%">
           <div className="max-w-3xl">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.1]">
-              Most teams don’t have an AI problem — <span className="text-blue-600">they have a systems problem.</span>
+              Most teams don’t have an AI problem - <span className="text-blue-600">they have a systems problem.</span>
             </h2>
             <p className="mt-6 text-xl text-slate-600">
               Adding more tools won't fix a broken workflow. You need a unified engine that runs 24/7 without human intervention.
